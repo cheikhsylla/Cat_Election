@@ -21,14 +21,15 @@
                 > 
                 </v-img>
                 <v-card-actions>
-                  <v-btn block color="blue">
+                  <v-btn block color="blue" @click="showAlert(cat)">
                     <span style="color:white">Vote here</span>
                   </v-btn>  
                 </v-card-actions>   
             </v-card>
       </v-col>
+      
     </v-row>
-   
+    <v-pagination v-model="page" :length="6" ></v-pagination>
   </div>
 </template>
 
@@ -38,7 +39,9 @@
     export default {
       data() {
         return {
-          cat_info: null
+          cat_info: null,
+          
+          page:1,
         }
       },
       created() {
@@ -49,6 +52,22 @@
         axios.get('http://localhost:8080/data/cats.json').then(response=>{
             this.cat_info=response.data.images;        
             })
+        },
+          
+        showAlert : function(cat){
+
+          //Display alert message
+          this.$swal({
+            position: 'center',
+            icon: 'success',
+            title: 'Thank you for voting!',
+            showConfirmButton: false,
+            timer: 1500
+            }),
+          // send candidate informations to store
+            cat.score=0;
+           
+            this.$store.dispatch('increment',cat)
         }
 
       }
@@ -58,15 +77,15 @@
 
 <style scoped>
 
-  .header_message{
-    border-width:2px;
-    border-style:solid;
-    border-color:black;
+      .header_message{
+          border-width:2px;
+          border-style:solid;
+          border-color:black;
 
-  }
-  .header_message h1 {
-  
-    text-align: center;
-  }
+      }
+      .header_message h1 {
+      
+          text-align: center;
+      }
 
 </style>

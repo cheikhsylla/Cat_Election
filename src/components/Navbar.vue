@@ -20,7 +20,7 @@
          <span>Vote</span>
          <font-awesome-icon :icon="['fas', 'vote-yea']" size="2x" color="black"  ></font-awesome-icon>
        </v-btn>
-       <v-btn text>
+       <v-btn text router to="/results">
          <span>Results</span>
          <font-awesome-icon :icon="['fas', 'poll']" size="2x" color="black"  ></font-awesome-icon>
        </v-btn>
