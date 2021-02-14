@@ -6,7 +6,7 @@
 
         <v-expansion-panels popout>
           <v-expansion-panel
-            v-for="(result, index) in $store.state.election_result"
+            v-for="(result, index) in msg"
             :key="index"
           >
             <v-expansion-panel-header>
@@ -55,20 +55,24 @@
       </v-row>
     </v-container>
     <div class="text-center">
-      <whoIsTheWinner/>
+
     </div>
  </div>
  
 </template>
 
 <script>
-import whoIsTheWinner from './whoIsTheWinner'
-    export default {
-      components:{
-        whoIsTheWinner
-      }
 
-    }
+export default {
+    name:'Test',
+    props:['msg'],
+    data() {
+        return {
+            test:this.msg
+        }
+    },
+
+}
 </script>
 
 <style>

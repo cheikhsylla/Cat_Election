@@ -12,11 +12,9 @@
         </router-link>
       </div>
       <v-spacer></v-spacer>
-    <!-- Icone -->
+      <!-- Icone -->
       <div class="mt-5">
-        
-      
-        <v-btn text>
+        <v-btn text router to="/">
          <span>Vote</span>
          <font-awesome-icon :icon="['fas', 'vote-yea']" size="2x" color="black"  ></font-awesome-icon>
        </v-btn>

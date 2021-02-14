@@ -16,7 +16,14 @@ const routes = [
     component: function () {
       return import('@/components/Results.vue')
     }
-  }
+  },
+  // {
+  //   path: '/thewinner',
+  //   name: 'thewinner',
+  //   component: function () {
+  //     return import('@/components/whoIsTheWinner.vue')
+  //   }
+  // }
 ]
 
 const router = new VueRouter({

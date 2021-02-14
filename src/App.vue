@@ -1,10 +1,11 @@
 <template>
   <v-app  >
     <Navbar/>
-    <v-main class="maincolor">
-      <router-view></router-view>
-    </v-main>
-
+    <v-container>
+      <v-main class="maincolor">
+        <router-view></router-view>
+      </v-main>
+    </v-container>
   </v-app>
 </template>
 
