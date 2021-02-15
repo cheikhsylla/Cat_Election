@@ -49,8 +49,7 @@
           cat_info:[],
           pageOfItems: [],
           dataLoaded:false,
-          test:[]
-
+          
         }
       },
       
@@ -78,8 +77,10 @@
               });
             //add score to the cat array if not exist
             if (cat && ! cat.score) cat.score=1;
+           
             // sent information to the store
-            this.$store.dispatch('increment',cat);
+           this.$store.dispatch('increment',cat);
+           
             
         },
 

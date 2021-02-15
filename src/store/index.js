@@ -9,11 +9,17 @@ export default new Vuex.Store({
   },
   mutations: {
     increment (state,payload) {
+     
  
       if (this.state.election_result.map(el => el.id).includes(payload.id)) {
-    
-        payload.score =  payload.score + 1;
-        console.log(this.state.election_result);
+       
+        
+        this.state.election_result.forEach((element, index) => {
+          if(element.id === payload.id) {
+           this.state.election_result[index].score++;
+          }
+      });
+      
       } else {
         this.state.election_result.push(payload);
       }

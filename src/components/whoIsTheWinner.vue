@@ -24,7 +24,9 @@
                     </v-img>
                     <v-card-actions>
                       <v-btn block color="green">
-                        <span style="color:white">GONGRATULATION</span>
+                        <span style="color:white"> CONGRATULATION <strong> Total voice:{{winner.score}}</strong></span>
+                        <br>
+                        <span style="color:white"></span>
                       </v-btn>  
                     </v-card-actions>   
                 </v-card>
